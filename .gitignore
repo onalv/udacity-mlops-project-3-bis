@@ -1,0 +1,7 @@
+
+/census.csv
+.DS_Store
+*.csv
+.vscode
+__pycache__
+outputs
