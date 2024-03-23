@@ -1,4 +1,3 @@
-
 import os
 from training.train_model import get_train_test_data, train_save_model
 
