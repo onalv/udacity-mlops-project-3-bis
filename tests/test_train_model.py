@@ -12,10 +12,10 @@ def test_get_train_test_data():
     assert test_df.shape[1] == 12
 
 
-# def test_train_save_model(clean_data, cat_features):
+def test_train_save_model(clean_data, cat_features):
 
-#     train_save_model(clean_data, cat_features, root_path='./')
+    train_save_model(clean_data, cat_features, root_path='./')
 
-#     assert os.path.isfile("./model/model.joblib")
-#     assert os.path.isfile("./model/encoder.joblib")
-#     assert os.path.isfile("./model/lb.joblib")
+    assert os.path.isfile("./model/model.joblib")
+    assert os.path.isfile("./model/encoder.joblib")
+    assert os.path.isfile("./model/lb.joblib")
