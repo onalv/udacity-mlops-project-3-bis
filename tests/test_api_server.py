@@ -52,3 +52,9 @@ def test_post_malformed(client):
         "nativeCountry": "United-States"
     })
     assert r.status_code == 422
+
+if __name__ == "__main__":
+    test_get()
+    test_post_high()
+    test_post_low()
+    test_post_malformed()
