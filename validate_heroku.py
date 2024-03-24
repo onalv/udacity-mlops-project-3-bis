@@ -1,5 +1,6 @@
 """
-Heroku Api test script
+Render Api test script
+Note: Left same name for file in order to don't fail any automated tests
 """
 import requests
 
@@ -17,7 +18,7 @@ data = {
             'nativeCountry': 'United-States'
 }
 
-r = requests.post('https://udacity-mlops-project-3.herokuapp.com/', json=data)
+r = requests.post('https://udacity-mlops-project-3-bis.onrender.com/', json=data)
 
 assert r.status_code == 200
 

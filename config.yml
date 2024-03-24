@@ -1,5 +1,5 @@
 main:
-  project_name: Deploying a Machine Learning Project in Heroku
+  project_name: Deploying a Machine Learning Project
   experiment_name: development
   steps: all
 
