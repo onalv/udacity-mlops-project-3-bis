@@ -1,6 +1,12 @@
+# Project: Deploying a ML Model to Cloud Application Platform with FastAPI
+
 ### Link to Repository:
 
 https://github.com/onalv/udacity-mlops-project-3-bis
+
+### Link to deployed application
+
+https://udacity-mlops-project-3-bis.onrender.com/
 
 Working in a command line environment is recommended for ease of use with git and dvc. If on Windows, WSL1 or 2 is recommended.
 
@@ -44,12 +50,3 @@ Working in a command line environment is recommended for ease of use with git an
   - Use a Pydantic model to ingest the body from POST. This model should contain an example.
     - Hint: the data has names with hyphens and Python does not allow those as variable names. Do not modify the column names in the csv and instead use the functionality of FastAPI/Pydantic/etc to deal with this.
 - Write 3 unit tests to test the API (one for the GET and two for POST, one that tests each prediction).
-
-# API Deployment
-
-- Create a free Heroku account (for the next steps you can either use the web GUI or download the Heroku CLI).
-- Create a new app and have it deployed from your GitHub repository.
-  - Enable automatic deployments that only deploy if your continuous integration passes.
-  - Hint: think about how paths will differ in your local environment vs. on Heroku.
-  - Hint: development in Python is fast! But how fast you can iterate slows down if you rely on your CI/CD to fail before fixing an issue. I like to run flake8 locally before I commit changes.
-- Write a script that uses the requests module to do one POST on your live API.
