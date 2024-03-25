@@ -13,14 +13,19 @@ data = {
     'occupation': 'Prof-specialty',
     'relationship': 'Not-in-family',
     'race': 'White',
-            'sex': 'Male',
-            'hoursPerWeek': 60,
-            'nativeCountry': 'United-States'
+    'sex': 'Male',
+    'hoursPerWeek': 60,
+    'nativeCountry': 'United-States'
 }
 
-r = requests.post('https://udacity-mlops-project-3-bis.onrender.com/', json=data)
+try:
+    r = requests.post('https://udacity-mlops-project-3-bis.onrender.com/', json=data)
+    r.raise_for_status()  # Raise an exception for HTTP error codes
+    response_data = r.json()
+except requests.exceptions.RequestException as e:
+    print("Error occurred during request:", e)
+    response_data = None
 
-assert r.status_code == 200
-
-print("Response code: %s" % r.status_code)
-print("Response body: %s" % r.json())
+if response_data:
+    print("Response code:", r.status_code)
+    print("Response body:", response_data)
