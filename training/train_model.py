@@ -48,3 +48,5 @@ def train_save_model(train, cat_features, root_path):
     dump(trained_model, f"{root_path}/model/model.joblib")
     dump(encoder, f"{root_path}/model/encoder.joblib")
     dump(lb, f"{root_path}/model/lb.joblib")
+
+    return trained_model, encoder, lb

@@ -1,6 +1,7 @@
 import logging
 import hydra
-from ml.data import clean_data
+from ml.data import clean_data, process_data
+from ml.model import compute_model_metrics, inference
 from training.train_model import get_train_test_data, train_save_model
 from training.val_model import val_model
 from omegaconf import DictConfig
@@ -34,7 +35,19 @@ def go(config: DictConfig):
 
     if "train_model" in active_steps:
         logging.info("Train/Test model procedure started")
-        train_save_model(train_df, cat_features, root_path)
+        model, encoder, lb = train_save_model(train_df, cat_features, root_path)
+        # Evaluate model
+        X_test, y_test, *_ = process_data(
+            test_df,
+            categorical_features=cat_features,
+            label="salary",
+            training=False,
+            encoder=encoder,
+            lb=lb,
+        )
+        pred = inference(model, X_test)
+        precision, recall, fbeta = compute_model_metrics(y_test, pred)
+        print(f"Inference metrics: Precision: {precision}, Recall: {recall}, Fbeta: {fbeta}")
 
     if "check_score" in active_steps:
         logging.info("Score check procedure started")

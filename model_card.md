@@ -20,7 +20,13 @@ The source of the data is https://archive.ics.uci.edu/ml/datasets/census+income;
 
 ## Metrics
 
-The model's performance was evaluated using Accuracy score, F1 beta score, Precision, and Recall. The values obtained were approximately 0.80 for the Accuracy score, with the F1 beta score, Precision, and Recall metrics calculated using our compute_model_metrics function on the test data also reflecting similar performance levels.
+The model's performance was evaluated using Accuracy score, F1 beta score, Precision, and Recall. The values obtained were:
+| Metric | Value |
+|--------|-------|
+| Accuracy | 0.82 |
+| Precision | 0.68 |
+| Recall | 0.57 |
+| Fbeta | 0.62 |
 
 ## Ethical Considerations
 

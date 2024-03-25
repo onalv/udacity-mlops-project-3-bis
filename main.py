@@ -5,7 +5,7 @@ import yaml
 from fastapi import FastAPI
 from schema import ModelInput
 from pandas import DataFrame
-from training.inferance_model import run_inference
+from training.inference_model import run_inference
 
 
 if "DYNO" in os.environ and os.path.isdir(".dvc"):
